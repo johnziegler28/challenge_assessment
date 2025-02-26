@@ -1,0 +1,9 @@
+// Push a user ID to the data layer
+
+dataLayer.push({'userId': '12345'});
+
+
+
+// Push a product name and price
+
+dataLayer.push({'productName': 'T-shirt', 'productPrice': 19.99});
