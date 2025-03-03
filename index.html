@@ -21,3 +21,28 @@ height = "0" width = "0" style = "display:none;visibility:hidden" ></ iframe ></
     </body>
 
     </html>
+
+<button id="send-api-request">Send API Request</button>
+
+<script>
+  document.getElementById('send-api-request').addEventListener('click', function() {
+    // Get parameters from the GTM dataLayer
+    const key = window.dataLayer[0].key;
+    const value = window.dataLayer[0].value;
+
+    // Create API request URL
+    const apiUrl = `https://httpbin.org/get?${key}=${value}`;
+
+    // Send GET request
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Log the response data to the console
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+</script>
+
