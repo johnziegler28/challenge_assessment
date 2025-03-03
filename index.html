@@ -18,31 +18,39 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
 < noscript >< iframe src = "https://www.googletagmanager.com/ns.html?id=GTM-TVF7M4HK"
 height = "0" width = "0" style = "display:none;visibility:hidden" ></ iframe ></ noscript >
 < !--End Google Tag Manager (noscript) -->
+
+<script src="script.js">
+    (function() {
+    // Get the query string from the URL
+    const queryString = window.location.search;
+    
+    // Parse the query string
+    const urlParams = new URLSearchParams(queryString);
+    
+    // Object to store key-value pairs
+    let queryData = {};
+
+    // Loop through the query parameters and add them to the object
+    urlParams.forEach((value, key) => {
+        queryData[key] = value;
+    });
+
+    // Push the data to GTM dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'queryParamsExtracted',
+        'queryParams': queryData
+    });
+
+    console.log('Query parameters pushed to dataLayer:', queryData);
+})();
+
+</script>
+
+        
     </body>
 
     </html>
 
-<button id="send-api-request">Send API Request</button>
 
-<script>
-  document.getElementById('send-api-request').addEventListener('click', function() {
-    // Get parameters from the GTM dataLayer
-    const key = window.dataLayer[0].key;
-    const value = window.dataLayer[0].value;
-
-    // Create API request URL
-    const apiUrl = `https://httpbin.org/get?${key}=${value}`;
-
-    // Send GET request
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        // Log the response data to the console
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  });
-</script>
 
