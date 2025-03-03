@@ -33,7 +33,7 @@
         }
 
         // Construct the request URL
-        const baseUrl = "https://your-api-endpoint.com/data"; // Replace with your actual API endpoint
+        const baseUrl = "https://johnziegler28.github.io/challenge_assessment/?key=key&value=value"; // Replace with your actual API endpoint
         const queryString = new URLSearchParams(queryData).toString();
         const requestUrl = `${baseUrl}?${queryString}`;
 
