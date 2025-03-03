@@ -1,0 +1,14 @@
+<script>
+  // Extract query parameters from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const key = urlParams.get('key');
+  const value = urlParams.get('value');
+
+  // Push to GTM dataLayer
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'pageLoad',
+    key: key,
+    value: value
+  });
+</script>
