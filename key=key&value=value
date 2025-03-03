@@ -12,7 +12,5 @@
     value: value
   });
 
-<button onclick="sendQueryData()">Send Query Data</button>
-<script src="gtm-query-params.js"></script>
 
 </script>
