@@ -19,33 +19,7 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
 height = "0" width = "0" style = "display:none;visibility:hidden" ></ iframe ></ noscript >
 < !--End Google Tag Manager (noscript) -->
 
-<script src="script.js">
-    (function() {
-    // Get the query string from the URL
-    const queryString = https://johnziegler28.github.io/challenge_assessment/?key=key&value=value;
-    
-    // Parse the query string
-    const urlParams = new URLSearchParams(queryString);
-    
-    // Object to store key-value pairs
-    let queryData = {};
-
-    // Loop through the query parameters and add them to the object
-    urlParams.forEach((value, key) => {
-        queryData[key] = value;
-    });
-
-    // Push the data to GTM dataLayer
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'queryParamsExtracted',
-        'queryParams': queryData
-    });
-
-    console.log('Query parameters pushed to dataLayer:', queryData);
-})();
-
-</script>
+<script src="script.js"></script>
 
         
     </body>
